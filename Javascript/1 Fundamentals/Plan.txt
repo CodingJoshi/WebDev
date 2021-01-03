@@ -1,0 +1,7 @@
+Semicolon
+variables
+data types
+type comversion
+basic operators
+loops
+functions

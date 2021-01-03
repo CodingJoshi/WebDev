@@ -1,0 +1,11 @@
+/// Complete Web Dev Series
+Topics and SubTopics to be covered in this course
+1) HTML
+2) CSS
+3) Javascript
+4) React Js
+5) Node Js
+6) Socket.io
+7) MongoDB
+8) WebPack
+9) Tailwind Css/ Bootstrap etc..

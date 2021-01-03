@@ -1,0 +1,13 @@
+References
+https://www.packtpub.com/product/the-complete-javascript-course-build-a-professional-project-video/9781789341539
+- Variable and data type
+- Conditional and Looping
+- Functions
+- DOM
+- Execution Context -- Hoisting -- 'this'
+- Scope Chain
+- Closures
+- - Objects
+        Encapuslation and info hiding
+        Inheritance and Prototype chain 
+        Singleton and Module Patterns
