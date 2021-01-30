@@ -19,7 +19,25 @@ class App extends Component{
       TogglePerson: !isShown
     })
   };
-  DeletePersonHandler=(index,event)=>{
+  
+  changedHandler=(event,id)=>{
+    // console.log(event,id);
+    let Persons=this.state.persons.map((person,index)=>{
+      if(id===person.id){
+        return {id:person.id,name:event.target.value,age:person.age};
+      }
+      else{
+        return person;
+      }
+    })
+    console.log(Persons,this.state.persons);
+    this.setState({
+      persons:Persons,
+    }
+    )
+  }
+
+  DeletePersonHandler=(index)=>{
     // console.log('Person Deleted');
     // console.log(index);
     /*
@@ -59,6 +77,8 @@ class App extends Component{
               name={person.name} 
               age={person.age} 
               click={()=>this.DeletePersonHandler(index)} 
+              Changed={(event)=>this.changedHandler(event,person.id)}
+              currentName={person.name}
               key={person.id}
               />
             })
@@ -75,4 +95,4 @@ class App extends Component{
     );
   }
 }
-export default App;
+export default App; 

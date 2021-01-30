@@ -13,6 +13,7 @@ const Person=(props)=>{
             <button onClick={props.click} style={style}>Delete</button>
             <h3>Name: {props.name} </h3>
             <h4>Age: {props.age}</h4>
+            <input type="text" onChange={props.Changed} value={props.currentName}></input>
             <p>lorem epsum</p>
         </div>
     )
