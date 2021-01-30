@@ -21,3 +21,19 @@
   justify-content: space-around;
   margin: 25px;
 }
+
+.InputField{
+  margin: 100px;
+  padding: 25px;
+  border: 2px solid red;
+  margin: 15px;
+}
+
+.charBox{
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+  margin: 16px;
+  border: 1px solid black;
+  
+}
