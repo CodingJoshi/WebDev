@@ -63,9 +63,11 @@ class App extends Component{
       fontSize:'20px',
       border:'2px solid blue',
       borderRadius:'20%',
-      outline:'none'
+      outline:'none',
     }
-
+    const classes=[];
+    if(this.state.persons.length<=2)classes.push('red');
+    if(this.state.persons.length<=1)classes.push('bold');
     let PersonsCard=null;
     if(this.state.ShowPersons){
       PersonsCard=this.state.persons.map((per,idx)=>{
@@ -82,7 +84,8 @@ class App extends Component{
     }
     return (
       <div className="App">
-        <h1>Person Toggler</h1>
+        <h1 >Person Toggler</h1>
+        <p className={classes.join(' ')}>Toggle the person with Toggle button</p>
         <button onClick={this.ToggleHandler} style={buttonToggle}>Toggle</button>
         <div className="personContainer">
           {PersonsCard}
