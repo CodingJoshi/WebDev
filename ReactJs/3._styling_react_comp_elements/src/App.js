@@ -30,6 +30,24 @@ class App extends Component{
     });
   }
 
+  DeletePerson=(idx,event)=>{
+    let newPersons=[...this.state.persons];
+    // console.log(String(event.target));
+    if(String(event.target)==='[object HTMLInputElement]'){
+      // console.log('this is input');
+    }
+    else{
+      for(let i=0;i<newPersons.length;i++){
+        if(idx===newPersons[i].id){
+          newPersons.splice(i,1);
+        }
+      }
+    }
+    this.setState({
+      persons:newPersons
+    })
+  }
+
   ToggleHandler=()=>{
     let show=this.state.ShowPersons;
     this.setState({
@@ -38,6 +56,16 @@ class App extends Component{
   }
 
   render(){
+    let buttonToggle={
+      background:'green',
+      color:'white',
+      padding:'10px',
+      fontSize:'20px',
+      border:'2px solid blue',
+      borderRadius:'20%',
+      outline:'none'
+    }
+
     let PersonsCard=null;
     if(this.state.ShowPersons){
       PersonsCard=this.state.persons.map((per,idx)=>{
@@ -46,14 +74,16 @@ class App extends Component{
         age={per.age}
         Add={per.Add}
         inputChange={(event)=>this.nameChangeHandler(per.id,event)}
+        Delete={(event)=>this.DeletePerson(per.id,event)}
         key={per.id}
         />
       });
+      buttonToggle.background='red';
     }
     return (
       <div className="App">
         <h1>Person Toggler</h1>
-        <button onClick={this.ToggleHandler}>Toggle</button>
+        <button onClick={this.ToggleHandler} style={buttonToggle}>Toggle</button>
         <div className="personContainer">
           {PersonsCard}
         </div>

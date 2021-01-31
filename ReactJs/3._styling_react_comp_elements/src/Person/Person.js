@@ -6,7 +6,7 @@ function Person(props){
         padding: '10px'
     }
     return (
-        <div style={PersonCard}>
+        <div style={PersonCard} onClick={props.Delete}>
             <p>I am <i><b>{props.name}</b></i></p>
             <p><b>Age: </b>{props.age}</p>
             <p><b>Address: <br/> </b>{props.Add}</p>
