@@ -7,7 +7,7 @@ function Person(props){
     }
     return (
         <div style={PersonCard} onClick={props.Delete}>
-            <p>I am <i><b>{props.name}</b></i></p>
+            <p>I am <i><b className="red">{props.name}</b></i></p>
             <p><b>Age: </b>{props.age}</p>
             <p><b>Address: <br/> </b>{props.Add}</p>
             <input onChange={props.inputChange}></input>

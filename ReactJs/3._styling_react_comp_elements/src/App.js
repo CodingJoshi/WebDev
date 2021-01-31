@@ -1,6 +1,7 @@
 import './App.css';
 import React,{Component} from 'react';
 import Person from './Person/Person'
+import Radium from 'radium'
 class App extends Component{
   state={
     persons:[
@@ -57,14 +58,19 @@ class App extends Component{
 
   render(){
     let buttonToggle={
-      background:'green',
+      backgroundColor:'black',
       color:'white',
       padding:'10px',
       fontSize:'20px',
       border:'2px solid blue',
       borderRadius:'20%',
       outline:'none',
-    }
+      ':hover': {
+        backgroundColor:'green',
+        color:'white',
+      }
+    };
+
     const classes=[];
     if(this.state.persons.length<=2)classes.push('red');
     if(this.state.persons.length<=1)classes.push('bold');
@@ -80,7 +86,10 @@ class App extends Component{
         key={per.id}
         />
       });
-      buttonToggle.background='red';
+      buttonToggle[':hover']={
+        backgroundColor:'red',
+        color:'white',
+      }
     }
     return (
       <div className="App">
@@ -95,4 +104,4 @@ class App extends Component{
   }
 }
 
-export default App;
+export default Radium(App);
