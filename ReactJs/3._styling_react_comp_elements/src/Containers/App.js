@@ -1,20 +1,6 @@
 import React,{Component} from 'react';
-import Person from './Person/Person';
+import Person from '../components/Persons/Person/Person';
 import classes from './App.module.css';
-// import styled from 'styled-components';
-// const ToogleButton=styled.button`
-//       background-color:${props=> props.alt? 'black' : 'black'};
-//       color:white;
-//       padding: 10px;
-//       font-size: 20px;
-//       border: 2px solid blue;
-//       border-radius: 20%;
-//       outline:  none;
-//       &:hover{
-//         background-color: ${props=> props.alt? 'red' : 'green'};
-//         color: white;
-//       }
-//     `;
 
 class App extends Component{
   state={
