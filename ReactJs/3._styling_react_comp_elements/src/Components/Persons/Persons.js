@@ -1,7 +1,8 @@
-import React,{Components} from 'react'
+import React from 'react'
 import Person from './Person/Person'
-const Persons=(props)=> (
-    props.persons.map((per,idx)=>{
+const Persons=(props)=> {
+    console.log('[Persons.js] rendering...');
+    return props.persons.map((per,idx)=>{
         return <Person
                 name={per.name}
                 age={per.age}
@@ -11,6 +12,6 @@ const Persons=(props)=> (
                 key={per.id}
                 />
     })
-)
+}
 
 export default Persons;

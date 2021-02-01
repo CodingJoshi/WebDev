@@ -7,7 +7,7 @@ const Cockpit=(props)=>{
     if(props.persons.length<=1)assignClass.push(classes.bold);
 
     const btnClass=[classes.toggleButton];
-    if(props .ShowPersons){
+    if(props.ShowPersons){
         btnClass.push(classes.Red);
     }
 
