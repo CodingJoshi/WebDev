@@ -1,0 +1,20 @@
+.Person{
+    border: 1px solid blue ;
+    border-radius: 5%;
+    margin: 5px;
+    padding: 10px;
+}
+.Person:hover{
+    border: 1px solid red ;
+    background-color: green;
+    color: white;
+    border-radius: 5%;
+    margin: 5px;
+    padding: 20px;
+}
+
+@media (min-width:740px) {
+    .Person{
+        width: 200px
+    }
+}

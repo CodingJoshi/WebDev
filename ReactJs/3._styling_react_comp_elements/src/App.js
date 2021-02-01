@@ -1,21 +1,20 @@
-import './App.css';
 import React,{Component} from 'react';
 import Person from './Person/Person';
-import styled from 'styled-components';
-
-const ToogleButton=styled.button`
-      background-color:${props=> props.alt? 'black' : 'black'};
-      color:white;
-      padding: 10px;
-      font-size: 20px;
-      border: 2px solid blue;
-      border-radius: 20%;
-      outline:  none;
-      &:hover{
-        background-color: ${props=> props.alt? 'red' : 'green'};
-        color: white;
-      }
-    `;
+import classes from './App.module.css';
+// import styled from 'styled-components';
+// const ToogleButton=styled.button`
+//       background-color:${props=> props.alt? 'black' : 'black'};
+//       color:white;
+//       padding: 10px;
+//       font-size: 20px;
+//       border: 2px solid blue;
+//       border-radius: 20%;
+//       outline:  none;
+//       &:hover{
+//         background-color: ${props=> props.alt? 'red' : 'green'};
+//         color: white;
+//       }
+//     `;
 
 class App extends Component{
   state={
@@ -72,16 +71,12 @@ class App extends Component{
   }
 
   render(){
-    let buttonToggle={
-      ':hover': {
-        backgroundColor:'green',
-        color:'white',
-      }
-    };
 
-    const classes=[];
-    if(this.state.persons.length<=2)classes.push('red');
-    if(this.state.persons.length<=1)classes.push('bold');
+    const assignClass=[];
+    if(this.state.persons.length<=2)assignClass.push(classes.red);
+    if(this.state.persons.length<=1)assignClass.push(classes.bold);
+    
+    const TogglebtnClass=[classes.toggleButton];
     let PersonsCard=null;
     if(this.state.ShowPersons){
       PersonsCard=this.state.persons.map((per,idx)=>{
@@ -94,13 +89,15 @@ class App extends Component{
         key={per.id}
         />
       });
+      TogglebtnClass.push(classes.Red);
     }
+
     return (
-      <div className="App">
+      <div className={classes.App}>
         <h1 >Person Toggler</h1>
-        <p className={classes.join(' ')}>Toggle the person with Toggle button</p>
-        <ToogleButton alt={this.state.ShowPersons}onClick={this.ToggleHandler}>Toggle</ToogleButton>
-        <div className="personContainer">
+        <p className={assignClass.join(' ')}>Toggle the person with Toggle button</p>
+        <button className={TogglebtnClass.join(' ')} alt={this.state.ShowPersons}onClick={this.ToggleHandler}>Toggle</button>
+        <div className={classes.personContainer}>
           {PersonsCard}
         </div>
       </div>
