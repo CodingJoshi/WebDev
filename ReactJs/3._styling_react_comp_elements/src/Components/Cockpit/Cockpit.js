@@ -13,7 +13,7 @@ const Cockpit=(props)=>{
 
     return (
         <div>
-            <h1 >Person Toggler</h1>
+            <h1>{props.title}</h1>
             <p className={assignClass.join(' ')}>Toggle the person with Toggle button</p>
             <button className={btnClass.join(' ')}  onClick={props.click}>Toggle</button>
         </div>
