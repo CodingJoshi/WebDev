@@ -1,7 +1,22 @@
 import './App.css';
 import React,{Component} from 'react';
-import Person from './Person/Person'
-import Radium from 'radium'
+import Person from './Person/Person';
+import styled from 'styled-components';
+
+const ToogleButton=styled.button`
+      background-color:${props=> props.alt? 'black' : 'black'};
+      color:white;
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid blue;
+      border-radius: 20%;
+      outline:  none;
+      &:hover{
+        background-color: ${props=> props.alt? 'red' : 'green'};
+        color: white;
+      }
+    `;
+
 class App extends Component{
   state={
     persons:[
@@ -58,13 +73,6 @@ class App extends Component{
 
   render(){
     let buttonToggle={
-      backgroundColor:'black',
-      color:'white',
-      padding:'10px',
-      fontSize:'20px',
-      border:'2px solid blue',
-      borderRadius:'20%',
-      outline:'none',
       ':hover': {
         backgroundColor:'green',
         color:'white',
@@ -86,16 +94,12 @@ class App extends Component{
         key={per.id}
         />
       });
-      buttonToggle[':hover']={
-        backgroundColor:'red',
-        color:'white',
-      }
     }
     return (
       <div className="App">
         <h1 >Person Toggler</h1>
         <p className={classes.join(' ')}>Toggle the person with Toggle button</p>
-        <button onClick={this.ToggleHandler} style={buttonToggle}>Toggle</button>
+        <ToogleButton alt={this.state.ShowPersons}onClick={this.ToggleHandler}>Toggle</ToogleButton>
         <div className="personContainer">
           {PersonsCard}
         </div>
@@ -104,4 +108,4 @@ class App extends Component{
   }
 }
 
-export default Radium(App);
+export default App;
