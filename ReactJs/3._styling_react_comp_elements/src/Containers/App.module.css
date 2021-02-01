@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+  color: white;
 }
 .App-header {
   background-color: #282c34;
@@ -22,30 +24,4 @@
   justify-content: space-around;
   padding: 15px;
   margin: 15px;
-}
-
-.red{
-  color: red;
-}
-.bold{
-  font-weight: bold;
-  
-}
-
-.toggleButton{
-  background-color:black;
-  color:white;
-  padding: 10px;
-  font-size: 20px;
-  border: 2px solid blue;
-  border-radius: 20%;
-  outline:  none;
-}
-
-.toggleButton:hover{
-  background-color: green;
-}
-
-.toggleButton:hover.Red{
-  background-color: red;
 }

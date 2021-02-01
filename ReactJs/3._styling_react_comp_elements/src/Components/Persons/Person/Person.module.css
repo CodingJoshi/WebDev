@@ -5,8 +5,8 @@
     padding: 10px;
 }
 .Person:hover{
-    border: 1px solid red ;
-    background-color: green;
+    border: 3px solid blue ;
+    background-color: red;
     color: white;
     border-radius: 5%;
     margin: 5px;

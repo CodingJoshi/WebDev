@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import Person from '../Components/Persons/Person/Person';
+import Persons from '../Components/Persons/Persons';
+import Cockpit from '../Components/Cockpit/Cockpit'
 import classes from './App.module.css';
 
 class App extends Component{
@@ -56,33 +57,24 @@ class App extends Component{
     })
   }
 
-  render(){
-
-    const assignClass=[];
-    if(this.state.persons.length<=2)assignClass.push(classes.red);
-    if(this.state.persons.length<=1)assignClass.push(classes.bold);
-    
-    const TogglebtnClass=[classes.toggleButton];
+  render(){    
     let PersonsCard=null;
     if(this.state.ShowPersons){
-      PersonsCard=this.state.persons.map((per,idx)=>{
-        return <Person
-        name={per.name}
-        age={per.age}
-        Add={per.Add}
-        inputChange={(event)=>this.nameChangeHandler(per.id,event)}
-        Delete={(event)=>this.DeletePerson(per.id,event)}
-        key={per.id}
-        />
-      });
-      TogglebtnClass.push(classes.Red);
+      PersonsCard=<Persons
+        persons={this.state.persons}
+        change={this.nameChangeHandler}
+        delete={this.DeletePerson}
+      />
+      
     }
-
+   
     return (
       <div className={classes.App}>
-        <h1 >Person Toggler</h1>
-        <p className={assignClass.join(' ')}>Toggle the person with Toggle button</p>
-        <button className={TogglebtnClass.join(' ')} alt={this.state.ShowPersons}onClick={this.ToggleHandler}>Toggle</button>
+        <Cockpit
+          persons={this.state.persons}
+          ShowPersons={this.state.ShowPersons}
+          click={this.ToggleHandler}
+        />
         <div className={classes.personContainer}>
           {PersonsCard}
         </div>
