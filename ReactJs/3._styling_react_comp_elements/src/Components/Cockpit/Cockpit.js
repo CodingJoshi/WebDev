@@ -1,6 +1,25 @@
 import classes from './Cockpit.module.css';
-import React from 'react' 
+import React, {useEffect} from 'react' 
 const Cockpit=(props)=>{
+    useEffect(()=>{
+        console.log('[Cockpit.js] useEffect');
+        //HTtp request ....
+        //things which we want to do only at first time rendering
+        const timer=setTimeout(() => {
+            alert('Saved data to cloud');
+        }, 1000);
+        return ()=>{
+            clearTimeout(timer);
+            console.log('[Cockpit.js] cleanup work in useEffect');
+        }
+    },[]); 
+
+    useEffect(()=>{
+        console.log('[Cockpit.js] 2nd useEffect');
+        return()=>{
+            console.log('[Cockpit.js] cleanup work is 2nd useEffect');
+        }
+    });
 
     const assignClass=[];
     if(props.persons.length<=2)assignClass.push(classes.red);
