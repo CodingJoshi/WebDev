@@ -22,8 +22,8 @@ const Cockpit=(props)=>{
     });
 
     const assignClass=[];
-    if(props.persons.length<=2)assignClass.push(classes.red);
-    if(props.persons.length<=1)assignClass.push(classes.bold);
+    if(props.personLength<=2)assignClass.push(classes.red);
+    if(props.personLength<=1)assignClass.push(classes.bold);
 
     const btnClass=[classes.toggleButton];
     if(props.ShowPersons){
@@ -38,4 +38,4 @@ const Cockpit=(props)=>{
         </div>
     )
 }
-export default Cockpit;
+export default React.memo(Cockpit);
