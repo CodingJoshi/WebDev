@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import Persons from '../Components/Persons/Persons';
 import Cockpit from '../Components/Cockpit/Cockpit'
 import classes from './App.module.css';
+import WithClass from '../hoc/withClass';
 
 class App extends Component{
   constructor(props){
@@ -85,7 +86,7 @@ class App extends Component{
     }
    
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <button onClick={()=>{
           this.setState({
             ShowCockpit:false,
@@ -101,7 +102,7 @@ class App extends Component{
         <div className={classes.personContainer}>
           {PersonsCard}
         </div>
-      </div>
+      </WithClass>
     );
   }
 }
